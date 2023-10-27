@@ -14,7 +14,14 @@ if (process.argv.length <= 2) {
     process.exit(1)
 }
 
-size = parseInt(process.argv[2], 10)
+size = parseInt(process.argv[2], 10);
+
+if (size <= 0) {
+    console.error("Invalid size");
+    console.error("Usage: ./1-print_square.js <size>");
+    console.error("Example: ./1-print_square.js 8");
+    process.exit(1);
+}
 
 for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
